@@ -1,9 +1,9 @@
 import psycopg2
 from psycopg2 import Error
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 import os
 
-load_dotenv('.env')
+load_dotenv(find_dotenv())
 
 class DbConnection:
     @staticmethod
@@ -11,7 +11,7 @@ class DbConnection:
         print(os.getenv('DBNAME'))
         try:
             # Подключение к базе данных
-            print(f"Подключение к базе данных с параметрами: database= todo")
+            print(f"Подключение к базе данных с параметрами: database=todo")
             connection = psycopg2.connect(
                 dbname=os.getenv('DBNAME'),
                 user=os.getenv('USER'),
@@ -20,7 +20,7 @@ class DbConnection:
                 port=os.getenv('PORT')
             )
             print("Успешное подключение к базе данных")
-            return connection.cursor()  # Return the cursor object
+            return connection.cursor()
         except Error as e:
             print(f"Ошибка при подключении к базе данных: {e}")
             print(f"Дополнительная информация: {str(e)}")
