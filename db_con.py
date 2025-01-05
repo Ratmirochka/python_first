@@ -27,5 +27,26 @@ class DbConnection:
             print(f"Тип ошибки: {type(e).__name__}")
             return None
 
+    @staticmethod
+    def get_con():
+        print(os.getenv('DBNAME'))
+        try:
+            # Подключение к базе данных
+            print(f"Подключение к базе данных с параметрами: database=todo")
+            connection = psycopg2.connect(
+                dbname=os.getenv('DBNAME'),
+                user=os.getenv('USER'),
+                password=os.getenv('PASSWORD'),
+                host=os.getenv('HOST'),
+                port=os.getenv('PORT')
+            )
+            print("Успешное подключение к базе данных")
+            return connection
+        except Error as e:
+            print(f"Ошибка при подключении к базе данных: {e}")
+            print(f"Дополнительная информация: {str(e)}")
+            print(f"Тип ошибки: {type(e).__name__}")
+            return None
+
 
 
