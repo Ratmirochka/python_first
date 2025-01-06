@@ -1,0 +1,75 @@
+January 6, 2025 > 18:44:42 | INFO | Запрос на получение бюджета
+January 6, 2025 > 18:44:42 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 18:44:42 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 18:44:42 | ERROR | Ошибка получения бюджета: name 'logger' is not defined
+January 6, 2025 > 18:45:03 | INFO | Запрос на получение бюджета
+January 6, 2025 > 18:45:03 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 18:45:03 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 18:45:03 | ERROR | Ошибка получения бюджета: name 'logger' is not defined
+January 6, 2025 > 18:45:34 | INFO | Запрос на получение бюджета
+January 6, 2025 > 18:45:34 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 18:45:34 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 18:45:34 | ERROR | Ошибка получения бюджета: name 'logger' is not defined
+January 6, 2025 > 18:47:30 | INFO | Запрос на получение бюджета
+January 6, 2025 > 18:47:30 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 18:47:30 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 18:47:30 | ERROR | Ошибка получения бюджета: name 'logger' is not defined
+January 6, 2025 > 18:51:30 | INFO | Запрос на получение бюджета
+January 6, 2025 > 18:51:30 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 18:51:30 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 18:51:30 | ERROR | Ошибка получения бюджета: name 'logger' is not defined
+January 6, 2025 > 18:53:35 | INFO | Запрос на получение бюджета
+January 6, 2025 > 18:53:35 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 18:53:35 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 18:53:35 | ERROR | Ошибка получения бюджета: name 'logger' is not defined
+January 6, 2025 > 18:53:38 | INFO | Запрос на получение бюджета
+January 6, 2025 > 18:53:38 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 18:53:38 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 18:53:38 | ERROR | Ошибка получения бюджета: name 'logger' is not defined
+January 6, 2025 > 18:53:38 | INFO | Запрос на получение бюджета
+January 6, 2025 > 18:53:38 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 18:53:38 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 18:53:38 | ERROR | Ошибка получения бюджета: name 'logger' is not defined
+January 6, 2025 > 18:53:39 | INFO | Запрос на получение бюджета
+January 6, 2025 > 18:53:39 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 18:53:39 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 18:53:39 | ERROR | Ошибка получения бюджета: name 'logger' is not defined
+January 6, 2025 > 18:53:39 | INFO | Запрос на получение бюджета
+January 6, 2025 > 18:53:39 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 18:53:39 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 18:53:39 | ERROR | Ошибка получения бюджета: name 'logger' is not defined
+January 6, 2025 > 18:54:09 | INFO | Запрос на получение бюджета
+January 6, 2025 > 18:54:09 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 18:54:09 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 18:54:09 | ERROR | Ошибка получения бюджета: name 'logger' is not defined
+January 6, 2025 > 18:54:16 | INFO | Запрос на получение бюджета
+January 6, 2025 > 18:54:16 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 18:54:16 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 18:54:16 | ERROR | Ошибка получения бюджета: name 'logger' is not defined
+January 6, 2025 > 18:56:43 | INFO | Запрос на получение бюджета
+January 6, 2025 > 18:56:43 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 18:56:43 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 18:56:43 | ERROR | Ошибка получения бюджета: name 'logger' is not defined
+January 6, 2025 > 18:56:45 | INFO | Запрос на получение бюджета
+January 6, 2025 > 18:56:45 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 18:56:45 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 18:56:45 | ERROR | Ошибка получения бюджета: name 'logger' is not defined
+January 6, 2025 > 18:56:46 | INFO | Запрос на получение бюджета
+January 6, 2025 > 18:56:46 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 18:56:46 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 18:56:46 | ERROR | Ошибка получения бюджета: name 'logger' is not defined
+January 6, 2025 > 18:57:47 | INFO | Запрос на получение бюджета
+January 6, 2025 > 18:57:47 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 18:57:47 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 18:57:47 | ERROR | Ошибка получения бюджета: name 'logger' is not defined
+January 6, 2025 > 18:57:48 | INFO | Запрос на получение бюджета
+January 6, 2025 > 18:57:48 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 18:57:48 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 18:57:48 | ERROR | Ошибка получения бюджета: name 'logger' is not defined
+January 6, 2025 > 19:01:04 | INFO | Запрос на получение бюджета
+January 6, 2025 > 19:01:04 | DEBUG | Получен токен: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MzYyMDcwNTh9.ld47KOJhlecyvc6vC4N5h8jCx8JeLPYn0UImWiGumH4
+January 6, 2025 > 19:01:04 | INFO | Пользователь с ID 2 прошел аутентификацию
+January 6, 2025 > 19:01:04 | DEBUG | Получение списка платежей
+January 6, 2025 > 19:01:04 | DEBUG | Данные платежей успешно получены: [RealDictRow({'pay_id': 6, 'values': 150.0, 'name_who_make': 'Akhmedshin Ratmir', 'name_for_make': 'Hairulin Bulat', 'date_of_pay': datetime.date(2024, 1, 30), 'date_for_period': datetime.date(2024, 1, 30), 'summ': 150.0}), RealDictRow({'pay_id': 7, 'values': 150.0, 'name_who_make': 'Akhmedshin Ratmir', 'name_for_make': 'Akhmedshin Ratmir', 'date_of_pay': datetime.date(2024, 2, 6), 'date_for_period': datetime.date(2024, 2, 6), 'summ': 300.0}), RealDictRow({'pay_id': 8, 'values': 150.0, 'name_who_make': 'Akhmedshin Ratmir', 'name_for_make': 'Hairulin Bulat', 'date_of_pay': datetime.date(2024, 2, 13), 'date_for_period': datetime.date(2024, 2, 13), 'summ': 450.0}), RealDictRow({'pay_id': 9, 'values': 150.0, 'name_who_make': 'Akhmedshin Ratmir', 'name_for_make': 'Hairulin Bulat', 'date_of_pay': datetime.date(2024, 2, 20), 'date_for_period': datetime.date(2024, 2, 20), 'summ': 600.0}), RealDictRow({'pay_id': 10, 'values': 150.0, 'name_who_make': 'Akhmedshin Ratmir', 'name_for_make': 'Hairulin Bulat', 'date_of_pay': datetime.date(2024, 2, 26), 'date_for_period': datetime.date(2024, 2, 26), 'summ': 750.0}), RealDictRow({'pay_id': 47, 'values': 2100.0, 'name_who_make': 'Akhmedshin Ratmir', 'name_for_make': 'Akhmedshin Ratmir', 'date_of_pay': datetime.date(2024, 3, 1), 'date_for_period': datetime.date(2024, 3, 1), 'summ': 2100.0}), RealDictRow({'pay_id': 48, 'values': 200.0, 'name_who_make': 'Hairulin Bulat', 'name_for_make': 'Hairulin Bulat', 'date_of_pay': datetime.date(2024, 3, 2), 'date_for_period': datetime.date(2024, 3, 2), 'summ': 200.0}), RealDictRow({'pay_id': 49, 'values': 200.0, 'name_who_make': 'user2', 'name_for_make': 'user2', 'date_of_pay': datetime.date(2024, 3, 9), 'date_for_period': datetime.date(2024, 3, 9), 'summ': 200.0}), RealDictRow({'pay_id': 50, 'values': 200.0, 'name_who_make': 'ratmirka', 'name_for_make': 'ratmirka', 'date_of_pay': datetime.date(2024, 3, 16), 'date_for_period': datetime.date(2024, 3, 16), 'summ': 200.0}), RealDictRow({'pay_id': 51, 'values': 1500.0, 'name_who_make': 'user1', 'name_for_make': 'user1', 'date_of_pay': datetime.date(2024, 3, 23), 'date_for_period': datetime.date(2024, 3, 23), 'summ': 1500.0}), RealDictRow({'pay_id': 52, 'values': 800.0, 'name_who_make': 'Akhmedshin Ratmir', 'name_for_make': 'Akhmedshin Ratmir', 'date_of_pay': datetime.date(2024, 4, 1), 'date_for_period': datetime.date(2024, 4, 1), 'summ': 800.0}), RealDictRow({'pay_id': 53, 'values': 200.0, 'name_who_make': 'Hairulin Bulat', 'name_for_make': 'Hairulin Bulat', 'date_of_pay': datetime.date(2024, 4, 30), 'date_for_period': datetime.date(2024, 4, 30), 'summ': 200.0}), RealDictRow({'pay_id': 57, 'values': 1000.0, 'name_who_make': 'Akhmedshin Ratmir', 'name_for_make': 'Akhmedshin Ratmir', 'date_of_pay': datetime.date(2024, 5, 1), 'date_for_period': datetime.date(2024, 5, 1), 'summ': 1000.0}), RealDictRow({'pay_id': 54, 'values': 200.0, 'name_who_make': 'user3', 'name_for_make': 'user3', 'date_of_pay': datetime.date(2024, 5, 6), 'date_for_period': datetime.date(2024, 5, 6), 'summ': 200.0}), RealDictRow({'pay_id': 55, 'values': 200.0, 'name_who_make': 'ratmirka', 'name_for_make': 'ratmirka', 'date_of_pay': datetime.date(2024, 5, 13), 'date_for_period': datetime.date(2024, 5, 13), 'summ': 200.0}), RealDictRow({'pay_id': 56, 'values': 200.0, 'name_who_make': 'user1', 'name_for_make': 'user1', 'date_of_pay': datetime.date(2024, 5, 20), 'date_for_period': datetime.date(2024, 5, 20), 'summ': 200.0}), RealDictRow({'pay_id': 58, 'values': 200.0, 'name_who_make': 'Hairulin Bulat', 'name_for_make': 'Hairulin Bulat', 'date_of_pay': datetime.date(2024, 5, 27), 'date_for_period': datetime.date(2024, 5, 27), 'summ': 200.0}), RealDictRow({'pay_id': 63, 'values': 800.0, 'name_who_make': 'Akhmedshin Ratmir', 'name_for_make': 'Akhmedshin Ratmir', 'date_of_pay': datetime.date(2024, 6, 1), 'date_for_period': datetime.date(2024, 6, 1), 'summ': 800.0}), RealDictRow({'pay_id': 59, 'values': 200.0, 'name_who_make': 'user4', 'name_for_make': 'user4', 'date_of_pay': datetime.date(2024, 6, 4), 'date_for_period': datetime.date(2024, 6, 4), 'summ': 200.0}), RealDictRow({'pay_id': 64, 'values': 200.0, 'name_who_make': 'Hairulin Bulat', 'name_for_make': 'Hairulin Bulat', 'date_of_pay': datetime.date(2024, 6, 8), 'date_for_period': datetime.date(2024, 6, 8), 'summ': 200.0}), RealDictRow({'pay_id': 60, 'values': 200.0, 'name_who_make': 'ratmirka', 'name_for_make': 'ratmirka', 'date_of_pay': datetime.date(2024, 6, 11), 'date_for_period': datetime.date(2024, 6, 11), 'summ': 200.0}), RealDictRow({'pay_id': 61, 'values': 200.0, 'name_who_make': 'user1', 'name_for_make': 'user1', 'date_of_pay': datetime.date(2024, 6, 18), 'date_for_period': datetime.date(2024, 6, 18), 'summ': 200.0}), RealDictRow({'pay_id': 62, 'values': 200.0, 'name_who_make': 'user2', 'name_for_make': 'user2', 'date_of_pay': datetime.date(2024, 6, 25), 'date_for_period': datetime.date(2024, 6, 25), 'summ': 200.0}), RealDictRow({'pay_id': 65, 'values': 400.0, 'name_who_make': 'Akhmedshin Ratmir', 'name_for_make': 'user1', 'date_of_pay': datetime.date(2025, 1, 5), 'date_for_period': datetime.date(2025, 1, 3), 'summ': 600.0}), RealDictRow({'pay_id': 66, 'values': 600.0, 'name_who_make': 'Akhmedshin Ratmir', 'name_for_make': 'ratmirka', 'date_of_pay': datetime.date(2025, 1, 5), 'date_for_period': datetime.date(2024, 1, 3), 'summ': 1200.0})]
+January 6, 2025 > 19:01:04 | DEBUG | Получение списка расходов
+January 6, 2025 > 19:01:04 | DEBUG | Данные расходов успешно получены: [RealDictRow({'expens_id': 11, 'values': 1600.0, 'date_of_exp': datetime.date(2024, 2, 10), 'who_write': 'Akhmedshin Ratmir', 'who_expens': 'Akhmedshin Ratmir', 'purpose': 'Wi-Fi роутер', 'summ': 1600.0}), RealDictRow({'expens_id': 12, 'values': 900.0, 'date_of_exp': datetime.date(2024, 2, 23), 'who_write': 'Hairulin Bulat', 'who_expens': 'Hairulin Bulat', 'purpose': '3 удлинителя', 'summ': 900.0}), RealDictRow({'expens_id': 13, 'values': 2050.0, 'date_of_exp': datetime.date(2024, 3, 2), 'who_write': 'user1', 'who_expens': 'ratmirka', 'purpose': 'Клавиатура, мышь, коврик', 'summ': 2050.0}), RealDictRow({'expens_id': 14, 'values': 7000.0, 'date_of_exp': datetime.date(2024, 4, 30), 'who_write': 'ratmirka', 'who_expens': 'user4', 'purpose': 'Диван', 'summ': 7000.0}), RealDictRow({'expens_id': 15, 'values': 1000.0, 'date_of_exp': datetime.date(2024, 5, 6), 'who_write': 'user2', 'who_expens': 'user3', 'purpose': 'Маркерные доски', 'summ': 1000.0}), RealDictRow({'expens_id': 16, 'values': 200.0, 'date_of_exp': datetime.date(2024, 5, 27), 'who_write': 'user3', 'who_expens': 'user2', 'purpose': 'Дубликат ключа', 'summ': 200.0}), RealDictRow({'expens_id': 17, 'values': 200.0, 'date_of_exp': datetime.date(2024, 6, 8), 'who_write': 'user4', 'who_expens': 'user1', 'purpose': 'Бумага 20 листов', 'summ': 200.0}), RealDictRow({'expens_id': 18, 'values': 600.0, 'date_of_exp': datetime.date(2025, 1, 5), 'who_write': 'Akhmedshin Ratmir', 'who_expens': 'Hairulin Bulat', 'purpose': 'Пиво и чипсы', 'summ': 800.0}), RealDictRow({'expens_id': 19, 'values': 600.0, 'date_of_exp': datetime.date(2025, 1, 5), 'who_write': 'Akhmedshin Ratmir', 'who_expens': 'ratmirka', 'purpose': 'Машина', 'summ': 1400.0}), RealDictRow({'expens_id': 20, 'values': 600.0, 'date_of_exp': datetime.date(2025, 1, 5), 'who_write': 'Akhmedshin Ratmir', 'who_expens': 'ratmirka', 'purpose': 'монитор', 'summ': 2000.0})]
