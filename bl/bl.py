@@ -5,8 +5,7 @@ from werkzeug.security import check_password_hash
 import datetime
 
 sys.path.append('../')
-from dal.db_query import DbQuery
-
+from dal.auth_query import DbQuery
 
 class AdminBl():
     @staticmethod
@@ -20,7 +19,7 @@ class AdminBl():
     def generate_jwt(user_id, SECRET_KEY):
         payload = {
             "user_id": user_id,
-            "exp": datetime.datetime.utcnow() + datetime.timedelta(hours=1)
+            "exp": datetime.datetime.utcnow() + datetime.timedelta(hours=8)
         }
         return jwt.encode(payload, SECRET_KEY, algorithm="HS256")
 
