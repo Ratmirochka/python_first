@@ -1,0 +1,14 @@
+January 7, 2025 > 16:25:52 | WARNING | id = False, operation = get_boards, status = The token is incorrect
+January 7, 2025 > 16:25:55 | WARNING | id = False, operation = get_boards, status = The token is incorrect
+January 7, 2025 > 16:26:00 | INFO | id = 2, operation = get_boards, status = succes
+January 7, 2025 > 16:26:13 | INFO | id = 2, operation = add_to_desk, status = succes, users = [{'role': 'admin', 'user_id': 6}], board_id = 18
+January 7, 2025 > 16:27:17 | INFO | id = 2, operation = create_desk, status = succes, users = [{'role': 'string', 'user_id': 2}], board_name = string, description = string
+January 7, 2025 > 16:27:56 | ERROR | id = 2, operation = create_task, status = You are not admin, user = 2, board_id = 17, title = string, description = string, deadline = 2025-01-07, status_id = 1
+January 7, 2025 > 16:30:27 | ERROR | id = 2, operation = create_task, status = You are not admin, user = 2, board_id = 17, title = string, description = string, deadline = 2025-01-07, status_id = 1
+January 7, 2025 > 16:30:29 | ERROR | id = 2, operation = create_task, status = You are not admin, user = 2, board_id = 17, title = string, description = string, deadline = 2025-01-07, status_id = 1
+January 7, 2025 > 16:30:31 | ERROR | id = 2, operation = create_task, status = You are not admin, user = 2, board_id = 17, title = string, description = string, deadline = 2025-01-07, status_id = 1
+January 7, 2025 > 16:30:49 | ERROR | id = 2, operation = create_task, status = You are not admin, user = 2, board_id = 17, title = string, description = string, deadline = 2025-01-07, status_id = 1
+January 7, 2025 > 16:32:45 | INFO | id = 2, operation = create_task, status = True, user = 2, board_id = 17, title = string, description = string, deadline = 2025-01-07, status_id = 1
+January 7, 2025 > 16:33:12 | INFO | id = 2, operation = get_all_users, status = succes
+January 7, 2025 > 16:33:28 | INFO | id = 2, operation = get_boards, status = succes
+January 7, 2025 > 16:35:42 | INFO | id = 2, operation = get_tasks, status = succes, user_id = 2, board_id = 17

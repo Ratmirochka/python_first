@@ -88,11 +88,9 @@ admin_page_blueprint = Blueprint('admin_page', __name__)
 })
 def get_user_for_admin():
     logger = get_logger("admin_page.log")
-    logger.debug("Запрос на получение пользователей для администратора")
     data = request.get_json()
 
     if not data or 'token' not in data or 'filter' not in data:
-        logger.debug("Некорректный запрос: отсутствуют обязательные поля")
         return jsonify({
             "message": "Missing required fields",
             "success": False
@@ -103,24 +101,22 @@ def get_user_for_admin():
 
     user_id = AdminBl.decode_jwt(token, os.getenv('SECRET_KEY'))
     if user_id:
-        logger.debug(f"user_id = {user_id}")
         role = DbQuery.get_role(user_id)[0]
-        logger.debug(f"Роль пользователя: {role}")
         if role == 'admin' or role == 'super admin':
             users = DbQuery.get_user_for_admin(filter)
-            logger.debug(f"Пользователи успешно получены: {users}")
+            logger.info(f"id = {user_id}, operation = get_user_for_admin, status = succes")
             return jsonify({
                 "message": users,
                 "success": True
             }), 200
         else:
-            logger.debug("Пользователь не имеет прав администратора")
+            logger.warning(f"id = {user_id}, operation = auth, status = You are not admin")
             return jsonify({
                 "message": "You are not admin",
                 "success": True
             }), 401
     else:
-        logger.debug("Неверный токен")
+        logger.info(f"id = {user_id}, operation = auth, status = The token is incorrect")
         return jsonify({
             "message": "The token is incorrect",
             "success": False
@@ -186,11 +182,9 @@ def get_user_for_admin():
 })
 def create_user():
     logger = get_logger("admin_page.log")
-    logger.debug("Запрос на создание нового пользователя")
     data = request.get_json()
 
     if not data or 'token' not in data or 'name' not in data or 'mail' not in data or 'passw' not in data or 'post' not in data or 'role' not in data:
-        logger.debug("Некорректный запрос: отсутствуют обязательные поля")
         return jsonify({
             "message": "Missing required fields",
             "success": False
@@ -206,24 +200,23 @@ def create_user():
     user_id = AdminBl.decode_jwt(token, os.getenv('SECRET_KEY'))
     if user_id:
         user_role = DbQuery.get_role(user_id)[0]
-        logger.debug(f"Роль пользователя: {user_role}")
         if user_role == 'super admin':
             role_id = 1
             if role == 'user': role_id = 1
             if role == 'admin': role_id = 2
             if role == 'super admin': role_id = 3
             DbQuery.insert_new_user(name, post, mail, passw, role_id)
-            logger.debug(f"Пользователь {name} успешно добавлен")
+            logger.info(f"id = {user_id}, operation = create_user, status = User is added, user_name = {name}, mail = {mail}, post = {post}, role = {role}")
             return jsonify({
                 "message": "User is added",
                 "success": True
             }), 200
-        logger.debug("Пользователь не имеет прав супер-администратора")
+        logger.warning(f"id = {user_id}, operation = create_user, status = You are not super admin, user_name = {name}, mail = {mail}, post = {post}, role = {role}")
         return jsonify({
             "message": "You are not super admin",
             "success": False
         }), 401
-    logger.debug("Неверный токен")
+    logger.info(f"id = {user_id}, operation = create_user, status = The token is incorrect, user_name = {name}, mail = {mail}, post = {post}, role = {role}")
     return jsonify({
         "message": "The token is incorrect",
         "success": False

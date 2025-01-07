@@ -97,34 +97,33 @@ def auth():
     login = data['login']
     password = data['password']
 
-    logger.info(f"Попытка аутентификации пользователя: {login}")
     result = AdminBl.is_correct(login, password)
 
     if result is True:
         user = DbQuery.get_user(login)
         if user:
             token = AdminBl.generate_jwt(user['user_id'], os.getenv('SECRET_KEY'))
-            logger.info(f"Пользователь {login} успешно аутентифицирован")
+            logger.info(f"login = {login}, operation = auth, status = Logged in successfully")
             return jsonify({
                 "message": "Logged in successfully",
                 "token": token,
                 "user": user
             }), 200
         else:
-            logger.error(f"Ошибка получения данных пользователя {login}")
+            logger.error(f"login = {login}, operation = auth, status = Database connection error")
             return jsonify({
                 "message": "Database connection error",
                 "success": False
             }), 500
     elif result is False:
-        logger.warning(f"Неверные учетные данные для пользователя {login}")
+        logger.warning(f"login = {login}, operation = auth, status = Incorrect username/password")
         return jsonify({
             "message": "Incorrect username/password",
             "success": False
         }), 401
     else:
-        logger.error("Ошибка сервера при проверке учетных данных")
+        logger.info(f"login = {login}, operation = auth, status = Can't check the password")
         return jsonify({
-            "message": "Database connection error",
+            "message": "Can't check the password",
             "success": False
         }), 500

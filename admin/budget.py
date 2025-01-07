@@ -14,8 +14,6 @@ load_dotenv(find_dotenv())
 
 budget_blueprint = Blueprint('budget', __name__)
 
-
-
 @budget_blueprint.route('/get_budget', methods=['POST'])
 @swag_from({
     "parameters": [
@@ -77,41 +75,36 @@ def get_budget():
 
     logger = get_logger("budget.log")
 
-    logger.info("Запрос на получение бюджета")
-
     data = request.get_json()
 
     if not data or 'token' not in data:
-        logger.warning("Неверный формат запроса: отсутствует токен")
         return jsonify({
             "message": "Missing required fields",
             "success": False
         }), 400
 
     token = data['token']
-    logger.debug(f"Получен токен: {token}")
 
     user_id = AdminBl.decode_jwt(token, os.getenv('SECRET_KEY'))
 
     if user_id:
-        logger.info(f"Пользователь с ID {user_id} прошел аутентификацию")
         try:
-            print("before")
             payments = DbQuery.get_payments()
             expenses = DbQuery.get_expenses()
+            logger.info(f"id = {user_id}, operation = get_budget, status = succes")
             return jsonify({
                 "payments": payments,
                 "expenses": expenses,
                 "success": True
             }), 200
         except Exception as e:
-            logger.error(f"Ошибка получения бюджета: {e}")
+            logger.error(f"id = {user_id}, operation = get_budget, status = Server error")
             return jsonify({
                 "message": "Server error",
                 "success": False
             }), 500
     else:
-        logger.warning("Неверный токен")
+        logger.warning(f"id = {user_id}, operation = get_budget, status = The token is incorrect")
         return jsonify({
             "message": "The token is incorrect",
             "success": False
@@ -173,50 +166,44 @@ def get_budget():
 })
 def add_payment():
     logger = get_logger("budget.log")
-    logger.info("Запрос на добавление платежа")
 
     data = request.get_json()
 
     if not data or 'token' not in data or 'for_user_id' not in data or 'value' not in data or 'date_for_period' not in data:
-        logger.warning("Неверный формат запроса: отсутствуют обязательные поля")
         return jsonify({
             "message": "Missing required fields",
             "success": False
         }), 400
 
     token = data['token']
-    logger.debug(f"Получен токен: {token}")
 
     user_id = AdminBl.decode_jwt(token, os.getenv('SECRET_KEY'))
 
     if user_id:
-        logger.info(f"Пользователь с ID {user_id} прошел аутентификацию")
         role = DbQuery.get_role(user_id)[0]
         if role == 'super admin':
-            logger.debug(f"Пользователь {user_id} имеет роль: {role}")
             try:
                 last_sum = DbQuery.get_last_sum()[0]
-                logger.debug(f"Последняя сумма платежа: {last_sum}")
                 result = DbQuery.add_payment(user_id, data['for_user_id'], data['value'], data['date_for_period'],
                                              last_sum)
-                logger.info(f"Платеж успешно добавлен: {result}")
+                logger.info(f"id = {user_id}, operation = add_payment, status = {result}, for_user_id = {data['for_user_id']}, value = {data['value']}, period = {data['date_for_period']}")
                 return jsonify({
                     "success": result
                 }), 200
             except Exception as e:
-                logger.error(f"Ошибка добавления платежа: {e}")
+                logger.error(f"id = {user_id}, operation = add_payment, status = Server error - {e}, for_user_id = {data['for_user_id']}, value = {data['value']}, period = {data['date_for_period']}")
                 return jsonify({
                     "message": "Server error",
                     "success": False
                 }), 500
         else:
-            logger.warning(f"Пользователь {user_id} не является супер-админом")
+            logger.error(f"id = {user_id}, operation = add_payment, status = You are not super admin, for_user_id = {data['for_user_id']}, value = {data['value']}, period = {data['date_for_period']}")
             return jsonify({
                 "message": "You are not super admin",
                 "success": False
             }), 401
     else:
-        logger.warning("Неверный токен")
+        logger.error(f"id = {user_id}, operation = add_payment, status = The token is incorrect, for_user_id = {data['for_user_id']}, value = {data['value']}, period = {data['date_for_period']}")
         return jsonify({
             "message": "The token is incorrect",
             "success": False
@@ -280,49 +267,43 @@ def add_payment():
 })
 def add_expens():
     logger = get_logger("budget.log")
-    logger.info("Запрос на добавление расхода")
 
     data = request.get_json()
 
     if not data or 'token' not in data or 'for_user_id' not in data or 'value' not in data or 'purpose' not in data:
-        logger.warning("Неверный формат запроса: отсутствуют обязательные поля")
         return jsonify({
             "message": "Missing required fields",
             "success": False
         }), 400
 
     token = data['token']
-    logger.debug(f"Получен токен: {token}")
 
     user_id = AdminBl.decode_jwt(token, os.getenv('SECRET_KEY'))
 
     if user_id:
-        logger.info(f"Пользователь с ID {user_id} прошел аутентификацию")
         role = DbQuery.get_role(user_id)[0]
         if role == 'super admin':
-            logger.debug(f"Пользователь {user_id} имеет роль: {role}")
             try:
                 last_exp_sum = DbQuery.get_last_exp_sum()[0]
-                logger.debug(f"Последняя сумма расходов: {last_exp_sum}")
                 result = DbQuery.add_expens(user_id, data['for_user_id'], data['value'], last_exp_sum, data['purpose'])
-                logger.info(f"Расход успешно добавлен: {result}")
+                logger.info(f"id = {user_id}, operation = add_expens, status = {result}, for_user_id = {data['for_user_id']}, value = {data['value']}, pepose = {data['purpose']}")
                 return jsonify({
                     "success": result
                 }), 200
             except Exception as e:
-                logger.error(f"Ошибка добавления расхода: {e}")
+                logger.error(f"id = {user_id}, operation = add_expens, status = Server error - {e}, for_user_id = {data['for_user_id']}, value = {data['value']}, pepose = {data['purpose']}")
                 return jsonify({
                     "message": "Server error",
                     "success": False
                 }), 500
         else:
-            logger.warning(f"Пользователь {user_id} не является супер-админом")
+            logger.warning(f"id = {user_id}, operation = add_expens, status = You are not super admin, for_user_id = {data['for_user_id']}, value = {data['value']}, pepose = {data['purpose']}")
             return jsonify({
                 "message": "You are not super admin",
                 "success": False
             }), 401
     else:
-        logger.warning("Неверный токен")
+        logger.error(f"id = {user_id}, operation = add_expens, status = The token is incorrect, for_user_id = {data['for_user_id']}, value = {data['value']}, pepose = {data['purpose']}")
         return jsonify({
             "message": "The token is incorrect",
             "success": False
