@@ -1,1 +1,8 @@
 January 7, 2025 > 16:21:07 | INFO | login = ratmir, operation = auth, status = Logged in successfully
+January 10, 2025 > 11:29:41 | WARNING | login = ramir, operation = auth, status = Incorrect username/password
+January 10, 2025 > 11:29:51 | INFO | login = ratmir, operation = auth, status = Logged in successfully
+January 10, 2025 > 14:40:46 | DEBUG | Получение пароля для пользователя: ratmir
+January 10, 2025 > 14:40:46 | DEBUG | Пароль найден для пользователя: ratmir
+January 10, 2025 > 14:40:46 | DEBUG | Получение информации о пользователе: ratmir
+January 10, 2025 > 14:40:46 | DEBUG | Данные пользователя ratmir успешно получены
+January 10, 2025 > 14:40:46 | INFO | login = ratmir, operation = auth, status = Logged in successfully
