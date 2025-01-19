@@ -1,3 +1,4 @@
+from flask_jwt_extended import jwt_required, JWTManager, get_jwt_identity
 from flask import Flask, request, Blueprint, jsonify
 from dotenv import load_dotenv, find_dotenv
 from flasgger import swag_from
@@ -14,9 +15,16 @@ load_dotenv(find_dotenv())
 
 admin_page_blueprint = Blueprint('admin_page', __name__)
 
-@admin_page_blueprint.route('/get_user_for_admin', methods=['POST'])
+@admin_page_blueprint.route('/', methods=['GET'])
 @swag_from({
     "parameters": [
+        {
+            "name": "Authorization",
+            "in": "header",
+            "type": "string",
+            "required": True,
+            "description": "Example:\"Bearer <JWT>\""
+        },
         {
             "name": "body",
             "in": "body",
@@ -24,7 +32,6 @@ admin_page_blueprint = Blueprint('admin_page', __name__)
             "schema": {
                 "type": "object",
                 "properties": {
-                    "token": {"type": "string"},
                     "filter": {
                         "type": "object",
                         "properties": {
@@ -86,20 +93,20 @@ admin_page_blueprint = Blueprint('admin_page', __name__)
         }
     }
 })
+@jwt_required()
 def get_user_for_admin():
     logger = get_logger("admin_page.log")
     data = request.get_json()
 
-    if not data or 'token' not in data or 'filter' not in data:
+    if not data or 'filter' not in data:
         return jsonify({
             "message": "Missing required fields",
             "success": False
         }), 400
 
-    token = data['token']
     filter = data['filter']
 
-    user_id = AdminBl.decode_jwt(token, os.getenv('SECRET_KEY'))
+    user_id = get_jwt_identity()
     if user_id:
         role = DbQuery.get_role(user_id)[0]
         if role == 'admin' or role == 'super admin':
@@ -123,9 +130,16 @@ def get_user_for_admin():
         }), 401
 
 
-@admin_page_blueprint.route('/create_user', methods=['POST'])
+@admin_page_blueprint.route('/users', methods=['POST'])
 @swag_from({
     "parameters": [
+        {
+            "name": "Authorization",
+            "in": "header",
+            "type": "string",
+            "required": True,
+            "description": "Example:\"Bearer <JWT>\""
+        },
         {
             "name": "body",
             "in": "body",
@@ -133,7 +147,6 @@ def get_user_for_admin():
             "schema": {
                 "type": "object",
                 "properties": {
-                    "token": {"type": "string"},
                     "name": {"type": "string"},
                     "mail": {"type": "string"},
                     "passw": {"type": "string"},
@@ -180,24 +193,24 @@ def get_user_for_admin():
         }
     }
 })
+@jwt_required()
 def create_user():
     logger = get_logger("admin_page.log")
     data = request.get_json()
 
-    if not data or 'token' not in data or 'name' not in data or 'mail' not in data or 'passw' not in data or 'post' not in data or 'role' not in data:
+    if not data or 'name' not in data or 'mail' not in data or 'passw' not in data or 'post' not in data or 'role' not in data:
         return jsonify({
             "message": "Missing required fields",
             "success": False
         }), 400
 
-    token = data['token']
     name = data['name']
     mail = data['mail']
     passw = data['passw']
     post = data['post']
     role = data['role']
 
-    user_id = AdminBl.decode_jwt(token, os.getenv('SECRET_KEY'))
+    user_id = get_jwt_identity()
     if user_id:
         user_role = DbQuery.get_role(user_id)[0]
         if user_role == 'super admin':

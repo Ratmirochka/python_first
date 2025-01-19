@@ -102,29 +102,7 @@ class DbQuery:
             logger.debug("Не удалось подключиться к базе данных")
             return "Не удалось подключиться к базе данных"
 
-    # @staticmethod
-    # def get_last_sum():
-    #     logger.debug("Получение последней суммы платежей")
-    #     con = DbConnection.get_con()
-    #     if con is not None:
-    #         try:
-    #             with con.cursor() as cursor:
-    #                 cursor.execute("""
-    #                         SELECT summ FROM payments
-    #                         WHERE pay_id = (
-    #                             SELECT pay_id FROM payments
-    #                             ORDER BY pay_id DESC
-    #                             LIMIT 1
-    #                         )""")
-    #                 result = cursor.fetchone()
-    #                 logger.debug(f"Последняя сумма платежей: {result}")
-    #                 return result
-    #         except psycopg2.Error as e:
-    #             logger.debug(f"Ошибка при получении последней суммы: {e}")
-    #             return False
-    #     else:
-    #         logger.debug("Не удалось подключиться к базе данных")
-    #         return "Не удалось подключиться к базе данных"
+
 
     @staticmethod
     def add_payment(user_id, for_user_id, value, date_for_period):
@@ -206,6 +184,31 @@ class DbQuery:
     #                 return result
     #         except psycopg2.Error as e:
     #             logger.debug(f"Ошибка при получении последней суммы расходов: {e}")
+    #             return False
+    #     else:
+    #         logger.debug("Не удалось подключиться к базе данных")
+    #         return "Не удалось подключиться к базе данных"
+
+
+    # @staticmethod
+    # def get_last_sum():
+    #     logger.debug("Получение последней суммы платежей")
+    #     con = DbConnection.get_con()
+    #     if con is not None:
+    #         try:
+    #             with con.cursor() as cursor:
+    #                 cursor.execute("""
+    #                         SELECT summ FROM payments
+    #                         WHERE pay_id = (
+    #                             SELECT pay_id FROM payments
+    #                             ORDER BY pay_id DESC
+    #                             LIMIT 1
+    #                         )""")
+    #                 result = cursor.fetchone()
+    #                 logger.debug(f"Последняя сумма платежей: {result}")
+    #                 return result
+    #         except psycopg2.Error as e:
+    #             logger.debug(f"Ошибка при получении последней суммы: {e}")
     #             return False
     #     else:
     #         logger.debug("Не удалось подключиться к базе данных")

@@ -1,6 +1,8 @@
+import flask_jwt_extended
 from flask import Flask, request, Blueprint, jsonify
 from dotenv import load_dotenv, find_dotenv
 from flasgger import swag_from
+from flask_jwt_extended import jwt_required, JWTManager, get_jwt_identity
 import json
 import sys
 import os
@@ -15,20 +17,15 @@ load_dotenv(find_dotenv())
 budget_blueprint = Blueprint('budget', __name__)
 
 
-@budget_blueprint.route('/get_budget', methods=['POST'])
+@budget_blueprint.route('/budgets', methods=['GET'])
 @swag_from({
     "parameters": [
         {
-            "name": "body",
-            "in": "body",
+            "name": "Authorization",
+            "in": "header",
+            "type": "string",
             "required": True,
-            "schema": {
-                "type": "object",
-                "properties": {
-                    "token": {"type": "string"}
-                },
-                "required": ["token"]
-            }
+            "description": "Example:\"Bearer <JWT>\""
         }
     ],
     "responses": {
@@ -74,20 +71,10 @@ budget_blueprint = Blueprint('budget', __name__)
         }
     }
 })
+@jwt_required()
 def get_budget():
     logger = get_logger("budget.log")
-
-    data = request.get_json()
-
-    if not data or 'token' not in data:
-        return jsonify({
-            "message": "Missing required fields",
-            "success": False
-        }), 400
-
-    token = data['token']
-
-    user_id = AdminBl.decode_jwt(token, os.getenv('SECRET_KEY'))
+    user_id = get_jwt_identity()
 
     if user_id:
         try:
@@ -113,9 +100,16 @@ def get_budget():
         }), 401
 
 
-@budget_blueprint.route('/add_payment', methods=['POST'])
+@budget_blueprint.route('/payments', methods=['POST'])
 @swag_from({
     "parameters": [
+        {
+            "name": "Authorization",
+            "in": "header",
+            "type": "string",
+            "required": True,
+            "description": "Example:\"Bearer <JWT>\""
+        },
         {
             "name": "body",
             "in": "body",
@@ -123,12 +117,11 @@ def get_budget():
             "schema": {
                 "type": "object",
                 "properties": {
-                    "token": {"type": "string"},
                     "for_user_id": {"type": "integer"},
                     "value": {"type": "number"},
                     "date_for_period": {"type": "string", "format": "date"}
                 },
-                "required": ["token", "for_user_id", "value", "date_for_period"]
+                "required": ["for_user_id", "value", "date_for_period"]
             }
         }
     ],
@@ -167,20 +160,19 @@ def get_budget():
         }
     }
 })
+@jwt_required()
 def add_payment():
     logger = get_logger("budget.log")
 
     data = request.get_json()
 
-    if not data or 'token' not in data or 'for_user_id' not in data or 'value' not in data or 'date_for_period' not in data:
+    if not data or 'for_user_id' not in data or 'value' not in data or 'date_for_period' not in data:
         return jsonify({
             "message": "Missing required fields",
             "success": False
         }), 400
 
-    token = data['token']
-
-    user_id = AdminBl.decode_jwt(token, os.getenv('SECRET_KEY'))
+    user_id = get_jwt_identity()
 
     if user_id:
         role = DbQuery.get_role(user_id)[0]
@@ -215,9 +207,16 @@ def add_payment():
         }), 401
 
 
-@budget_blueprint.route('/add_expens', methods=['POST'])
+@budget_blueprint.route('/expenses', methods=['POST'])
 @swag_from({
     "parameters": [
+        {
+            "name": "Authorization",
+            "in": "header",
+            "type": "string",
+            "required": True,
+            "description": "Example:\"Bearer <JWT>\""
+        },
         {
             "name": "body",
             "in": "body",
@@ -269,20 +268,20 @@ def add_payment():
         }
     }
 })
+@jwt_required()
 def add_expens():
     logger = get_logger("budget.log")
 
     data = request.get_json()
 
-    if not data or 'token' not in data or 'for_user_id' not in data or 'value' not in data or 'purpose' not in data:
+    if not data or 'for_user_id' not in data or 'value' not in data or 'purpose' not in data:
         return jsonify({
             "message": "Missing required fields",
             "success": False
         }), 400
 
-    token = data['token']
+    usert_id = get_jwt_identity()
 
-    user_id = AdminBl.decode_jwt(token, os.getenv('SECRET_KEY'))
     if user_id:
         role = DbQuery.get_role(user_id)[0]
         if role == 'super admin':
@@ -315,9 +314,16 @@ def add_expens():
             "success": False
         }), 401
 
-@budget_blueprint.route('/get_version_id', methods=['POST'])
+@budget_blueprint.route('/version_id', methods=['GET'])
 @swag_from({
     "parameters": [
+        {
+            "name": "Authorization",
+            "in": "header",
+            "type": "string",
+            "required": True,
+            "description": "Example:\"Bearer <JWT>\""
+        },
         {
             "name": "body",
             "in": "body",
@@ -374,20 +380,11 @@ def add_expens():
         }
     }
 })
+@jwt_required()
 def get_version_id():
     logger = get_logger("budget.log")
 
-    data = request.get_json()
-
-    if not data or 'token' not in data:
-        return jsonify({
-            "message": "Missing required fields",
-            "success": False
-        }), 400
-
-    token = data['token']
-
-    user_id = AdminBl.decode_jwt(token, os.getenv('SECRET_KEY'))
+    user_id = get_jwt_identity()
 
     if user_id:
         role = DbQuery.get_role(user_id)[0]
@@ -418,9 +415,16 @@ def get_version_id():
         }), 401
 
 
-@budget_blueprint.route('/get_budget_for_admin', methods=['POST'])
+@budget_blueprint.route('/budget/for_admins', methods=['GET'])
 @swag_from({
     "parameters": [
+        {
+            "name": "Authorization",
+            "in": "header",
+            "type": "string",
+            "required": True,
+            "description": "Example:\"Bearer <JWT>\""
+        },
         {
             "name": "body",
             "in": "body",
@@ -478,22 +482,21 @@ def get_version_id():
         }
     }
 })
+@jwt_required()
 def get_budget_for_admin():
     logger = get_logger("budget.log")
 
     data = request.get_json()
 
-    if not data or 'token' not in data or 'version_id' not in data:
+    if not data or 'version_id' not in data:
         return jsonify({
             "message": "Missing required fields",
             "success": False
         }), 400
 
-    token = data['token']
     version_id = int(data['version_id'])
 
-    user_id = AdminBl.decode_jwt(token, os.getenv('SECRET_KEY'))
-
+    user_id = get_jwt_identity()
 
     if user_id:
         role = DbQuery.get_role(user_id)[0]

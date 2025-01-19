@@ -1,4 +1,5 @@
 from flask import Flask, request, Blueprint, jsonify
+from flask_jwt_extended import create_access_token
 from dotenv import load_dotenv, find_dotenv
 from flasgger import swag_from
 import os
@@ -102,7 +103,7 @@ def auth():
     if result is True:
         user = DbQuery.get_user(login)
         if user:
-            token = AdminBl.generate_jwt(user['user_id'], os.getenv('SECRET_KEY'))
+            token = create_access_token(identity=str(user['user_id']))
             logger.info(f"login = {login}, operation = auth, status = Logged in successfully")
             return jsonify({
                 "message": "Logged in successfully",
