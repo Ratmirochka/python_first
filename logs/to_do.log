@@ -39,3 +39,4 @@ January 19, 2025 > 17:43:35 | INFO | id = 2, operation = get_boards, status = [{
 January 19, 2025 > 18:06:31 | INFO | id = 2, operation = delete_tasks, status = False, task_id = 3
 January 19, 2025 > 18:08:08 | INFO | id = 2, operation = delete_tasks, status = True, task_id = 3
 January 19, 2025 > 18:13:11 | INFO | id = 2, operation = recovery_task, status = True, task_id = 3
+January 19, 2025 > 18:14:26 | INFO | id = 2, operation = recovery_task, status = True, task_id = 3
