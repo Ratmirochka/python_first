@@ -17,7 +17,7 @@ load_dotenv(find_dotenv())
 budget_blueprint = Blueprint('budget', __name__)
 
 
-@budget_blueprint.route('/budgets', methods=['GET'])
+@budget_blueprint.route('', methods=['GET'])
 @swag_from({
     "parameters": [
         {
@@ -415,7 +415,7 @@ def get_version_id():
         }), 401
 
 
-@budget_blueprint.route('/budget/for_admins', methods=['GET'])
+@budget_blueprint.route('/for_admins', methods=['GET'])
 @swag_from({
     "parameters": [
         {

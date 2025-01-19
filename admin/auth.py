@@ -14,7 +14,7 @@ load_dotenv(find_dotenv())
 auth_blueprint = Blueprint('auth', __name__)
 
 
-@auth_blueprint.route('/', methods=['POST'])
+@auth_blueprint.route('', methods=['POST'])
 @swag_from({
     "parameters": [
         {

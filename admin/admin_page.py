@@ -15,7 +15,7 @@ load_dotenv(find_dotenv())
 
 admin_page_blueprint = Blueprint('admin_page', __name__)
 
-@admin_page_blueprint.route('/', methods=['GET'])
+@admin_page_blueprint.route('', methods=['GET'])
 @swag_from({
     "parameters": [
         {

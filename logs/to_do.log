@@ -13,3 +13,29 @@ January 7, 2025 > 16:33:12 | INFO | id = 2, operation = get_all_users, status = 
 January 7, 2025 > 16:33:28 | INFO | id = 2, operation = get_boards, status = succes
 January 7, 2025 > 16:35:42 | INFO | id = 2, operation = get_tasks, status = succes, user_id = 2, board_id = 17
 January 15, 2025 > 12:28:15 | INFO | id = 2, operation = get_boards, status = succes
+January 19, 2025 > 16:06:21 | INFO | id = 2, operation = create_desk, status = succes, users = [{'role': 'admin', 'user_id': 2}], board_name = ,mnbvc, description = mnbvc
+January 19, 2025 > 16:27:14 | INFO | id = 2, operation = delete_board, status = False, board_id = 17
+January 19, 2025 > 16:27:37 | INFO | id = 2, operation = delete_board, status = True, board_id = 17
+January 19, 2025 > 16:55:16 | INFO | id = 2, operation = get_boards, status = []
+January 19, 2025 > 16:55:21 | INFO | id = 2, operation = get_boards, status = []
+January 19, 2025 > 16:59:23 | INFO | id = 2, operation = get_boards, status = []
+January 19, 2025 > 17:00:57 | INFO | id = 2, operation = get_boards, status = []
+January 19, 2025 > 17:01:58 | INFO | id = 2, operation = get_boards, status = []
+January 19, 2025 > 17:08:26 | INFO | id = 2, operation = get_boards, status = []
+January 19, 2025 > 17:10:20 | INFO | id = 2, operation = get_boards, status = []
+January 19, 2025 > 17:14:25 | INFO | id = 1, operation = get_boards, status = []
+January 19, 2025 > 17:29:20 | INFO | id = 1, operation = get_boards, status = []
+January 19, 2025 > 17:30:15 | INFO | id = 1, operation = get_boards, status = []
+January 19, 2025 > 17:31:50 | INFO | id = 1, operation = get_boards, status = []
+January 19, 2025 > 17:33:56 | INFO | id = 1, operation = get_boards, status = []
+January 19, 2025 > 17:38:14 | INFO | id = 1, operation = get_boards, status = []
+January 19, 2025 > 17:38:35 | INFO | id = 1, operation = get_boards, status = []
+January 19, 2025 > 17:39:27 | INFO | id = 1, operation = get_boards, status = []
+January 19, 2025 > 17:39:44 | INFO | id = 1, operation = get_boards, status = []
+January 19, 2025 > 17:39:56 | INFO | id = 1, operation = get_boards, status = []
+January 19, 2025 > 17:41:23 | INFO | id = 1, operation = get_boards, status = []
+January 19, 2025 > 17:41:34 | INFO | id = 1, operation = get_boards, status = []
+January 19, 2025 > 17:43:35 | INFO | id = 2, operation = get_boards, status = [{'board_id': 18, 'name': 'Сайт для клиники', 'description': 'Сделать хороший сайт для клиники за деньги', 'role_name': 'user'}, {'board_id': 19, 'name': 'еще одна тестовая доска', 'description': 'Сделать хороший сайт для клиники за деньги', 'role_name': 'admin'}, {'board_id': 20, 'name': 'string', 'description': 'string', 'role_name': 'user'}, {'board_id': 21, 'name': ',mnbvc', 'description': 'mnbvc', 'role_name': 'admin'}, {'board_id': 22, 'name': ',mnbvc', 'description': 'mnbvc', 'role_name': 'admin'}, {'board_id': 23, 'name': ',mnbvc', 'description': 'mnbvc', 'role_name': 'admin'}]
+January 19, 2025 > 18:06:31 | INFO | id = 2, operation = delete_tasks, status = False, task_id = 3
+January 19, 2025 > 18:08:08 | INFO | id = 2, operation = delete_tasks, status = True, task_id = 3
+January 19, 2025 > 18:13:11 | INFO | id = 2, operation = recovery_task, status = True, task_id = 3

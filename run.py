@@ -9,6 +9,8 @@ from admin.to_do import to_do_blueprint
 from admin.auth import auth_blueprint
 from admin.budget import budget_blueprint
 from admin.admin_page import admin_page_blueprint
+from admin.board import board_blueprint
+from admin.task import task_blueprint
 
 load_dotenv(find_dotenv())
 
@@ -20,7 +22,6 @@ jwt = JWTManager(app)
 
 swagger_config = {
     "headers": [
-        ("Authorization", "Bearer")
     ],
     "specs": [
         {
@@ -41,8 +42,10 @@ swagger = Swagger(app, config=swagger_config)
 
 app.register_blueprint(to_do_blueprint, url_prefix='/to_do')
 app.register_blueprint(auth_blueprint, url_prefix='/auth')
-app.register_blueprint(budget_blueprint, url_prefix='/budget')
+app.register_blueprint(budget_blueprint, url_prefix='/budgets')
 app.register_blueprint(admin_page_blueprint, url_prefix='/admin_page')
+app.register_blueprint(board_blueprint, url_prefix='/boards')
+app.register_blueprint(task_blueprint, url_prefix='/boards/tasks')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
